@@ -3,7 +3,6 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String name;
@@ -24,28 +23,81 @@ public class Main {
 
         switch (userChoice){
             case 1 :
-                int rectangleSize;
+                int fullRectangleSize;
                 do{
                     System.out.print("Input Full Rectangle Size [greater than 1] : ");
-                    rectangleSize = sc.nextInt();
+                    fullRectangleSize = sc.nextInt();
 
-                }while (rectangleSize <= 1);
+                }while (fullRectangleSize <= 1);
 
                 System.out.println("Here is the full rectangle");
 
                 //baris
-                for (int i = 0; i < rectangleSize; i++) {
+                for (int i = 0; i < fullRectangleSize; i++) {
 
                     //kolom
-                    for (int j = 0; j < rectangleSize; j++) {
+                    for (int j = 0; j < fullRectangleSize; j++) {
                         System.out.print("*");
                     }
                     System.out.println("");
                 }
                 break;
             case 2:
+                int emptyRectangleSize;
+                do{
+                    System.out.print("Input Empty Rectangle Size [greater than 2]");
+                    emptyRectangleSize = sc.nextInt();
+                }while (emptyRectangleSize <=2);
+
+                System.out.println("Here is the empty rectangle");
+
+                //baris
+                for (int i = 0; i < emptyRectangleSize; i++) {
+
+                    //kolom
+                    for (int j = 0; j < emptyRectangleSize; j++) {
+                        //Baris pertama dan terakhir
+                        if(i == 0 || i == emptyRectangleSize-1){
+                            System.out.print("*");
+                        //Baris tengah2 untuk cetak bintang
+                        }else if(j == 0 || j == emptyRectangleSize-1){
+                            System.out.print("*");
+                        //Baris tengah2 untuk cetak spasi
+                        }else{
+                            System.out.print(" ");
+                        }
+                    }
+                    System.out.println("");
+                }
+
                 break;
             case 3:
+                int rightTriangleHeight;
+                do{
+                    System.out.print("Input Right Triangle Height [greater than 3]");
+                    rightTriangleHeight = sc.nextInt();
+                }while (rightTriangleHeight <=3);
+
+                System.out.println("Here is the Right Triangle Shape");
+
+                //baris
+                for (int i = 0; i < rightTriangleHeight; i++) {
+
+                    //kolom
+                    for (int j = 0; j <= i; j++) {
+                        //cetak bintang ful di baris pertama dan terakhir
+                        if(i == 0 || i == rightTriangleHeight-1){
+                            System.out.print("*");
+
+                        //cetak bintang di baris tengah
+                        }else if(j==0 || j==i){
+                            System.out.print("*");
+                        }else{
+                            System.out.print(" ");
+                        }
+                    }
+                    System.out.println("");
+                }
                 break;
             case 4:
                 return;
