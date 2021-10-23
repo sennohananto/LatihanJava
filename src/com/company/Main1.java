@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String name;
@@ -69,30 +69,26 @@ public class Main {
                     }
                     System.out.println("");
                 }
-
                 break;
             case 3:
                 int rightTriangleHeight;
                 do{
                     System.out.print("Input Right Triangle Height [greater than 3]");
                     rightTriangleHeight = sc.nextInt();
-                }while (rightTriangleHeight <=3);
-
+                } while (rightTriangleHeight <=3);
                 System.out.println("Here is the Right Triangle Shape");
-
                 //baris
                 for (int i = 0; i < rightTriangleHeight; i++) {
-
                     //kolom
                     for (int j = 0; j <= i; j++) {
                         //cetak bintang ful di baris pertama dan terakhir
-                        if(i == 0 || i == rightTriangleHeight-1){
+                        if (i == 0 || i == rightTriangleHeight-1){
                             System.out.print("*");
 
                         //cetak bintang di baris tengah
-                        }else if(j==0 || j==i){
+                        } else if(j==0 || j==i){
                             System.out.print("*");
-                        }else{
+                        } else {
                             System.out.print(" ");
                         }
                     }
