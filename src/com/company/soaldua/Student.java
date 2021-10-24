@@ -8,6 +8,9 @@ public class Student {
     private int age;
     private double gpa;
 
+    //  Ciri2 Constructor
+    //  1. Nama Methodnya SAMA PERSIS seperti nama Class
+
     public Student(String name, int age, double gpa) {
         this.name = name;
         this.age = age;
@@ -36,5 +39,9 @@ public class Student {
 
     public static boolean isNameValid(String name){
         return name.length() >= 3 && name.length() <= 15;
+    }
+
+    public void someMethod(){
+
     }
 }
