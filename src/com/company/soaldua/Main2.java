@@ -1,24 +1,62 @@
 package com.company.soaldua;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main2 {
     public static ArrayList<Student> listStudent = new ArrayList<>();
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String name;
+        int age;
+        Double gpa;
+        int choice;
+
         System.out.println("Hello, Welcome to Student DUmmy Data !");
-        System.out.print("Input your name [3 - 15 characters] (cannot be change)");
 
-        //Variable () / Field / Entity / Object
-        //Method / Function / Prochedure
+        do{
+            System.out.print("Input your name [3 - 15 characters] (cannot be change) : ");
+            name = sc.nextLine();
+        }while (!Student.isNameValid(name));
 
+        do {
+            System.out.print("Input your age [min 16](Cannot be change) : ");
+            age = sc.nextInt();
+        }while (age <16);
 
-        //NamaKelas namaVariable/object = new Constructor(parameter)
+        do{
+            System.out.print("Input your gpa [0.0 - 4.0 inclusive] : ");
+            gpa = sc.nextDouble();
+        } while (gpa < 0.0 || gpa > 4.0);
 
-        //Instantiation ==> Proses pembuatan suatu object
-        Student rafly = new Student("Rafly", 17, 3.9);
-        Student senno = new Student("Senno", 17, 3.9);
-        Student abdul = new Student("Andul", 17, 3.9);
+        Student student = new Student(name, age, gpa);
 
+        do{
+            System.out.println("Welcome, "+student.getName());
+            System.out.println("Student DUmmy Data");
+            System.out.println("==================");
+            System.out.println("1. View Data");
+            System.out.println("2. Update Data");
+            System.out.println("3. Exit");
+            System.out.print(">> ");
+            choice = sc.nextInt();
+
+            switch (choice){
+                case 1:
+                    student.viewData();
+                    break;
+                case 2:
+                    student.viewData();
+                    Double newGpa;
+                    do{
+                        System.out.print("Input your gpa [0.0 - 4.0 inclusive] : ");
+                        newGpa = sc.nextDouble();
+                    }while (newGpa < 0.0 || newGpa > 4.0);
+                    student.setGpa(newGpa);
+                    System.out.println("Student data updated Successfully");
+                    break;
+            }
+        }while(choice != 3);
     }
 }

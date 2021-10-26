@@ -1,16 +1,12 @@
 package com.company.soaldua;
 
-import java.util.ArrayList;
-
+//Class Header
 public class Student {
-
     private final String name;
-    private int age;
+    private final int age;
     private double gpa;
 
-    //  Ciri2 Constructor
-    //  1. Nama Methodnya SAMA PERSIS seperti nama Class
-
+    //Constructor = Method yang namanya SAMA PERSIS seperti nama class nya
     public Student(String name, int age, double gpa) {
         this.name = name;
         this.age = age;
@@ -25,10 +21,6 @@ public class Student {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public double getGpa() {
         return gpa;
     }
@@ -41,7 +33,11 @@ public class Student {
         return name.length() >= 3 && name.length() <= 15;
     }
 
-    public void someMethod(){
+    public void viewData(){
+        System.out.println("Your name is "+name);
+        System.out.println("Your age is "+age);
+        System.out.println("Your gpa is "+gpa +" / 4.0");
 
     }
+
 }
