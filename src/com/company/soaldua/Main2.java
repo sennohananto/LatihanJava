@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main2 {
-    public static ArrayList<Student> listStudent = new ArrayList<>();
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String name;
@@ -25,21 +23,23 @@ public class Main2 {
             age = sc.nextInt();
         }while (age <16);
 
-        do{
+        do {
             System.out.print("Input your gpa [0.0 - 4.0 inclusive] : ");
             gpa = sc.nextDouble();
         } while (gpa < 0.0 || gpa > 4.0);
 
-        Student student = new Student(name, age, gpa);
+        Student student;
+        student = new Student(name, age, gpa);
 
         do{
-            System.out.println("Welcome, "+student.getName());
+            System.out.println("Welcome, "+ student.getName());
             System.out.println("Student DUmmy Data");
             System.out.println("==================");
             System.out.println("1. View Data");
             System.out.println("2. Update Data");
             System.out.println("3. Exit");
             System.out.print(">> ");
+
             choice = sc.nextInt();
 
             switch (choice){
@@ -48,6 +48,7 @@ public class Main2 {
                     break;
                 case 2:
                     student.viewData();
+
                     Double newGpa;
                     do{
                         System.out.print("Input your gpa [0.0 - 4.0 inclusive] : ");
@@ -58,5 +59,6 @@ public class Main2 {
                     break;
             }
         }while(choice != 3);
+
     }
 }

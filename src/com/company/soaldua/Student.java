@@ -37,7 +37,6 @@ public class Student {
         System.out.println("Your name is "+name);
         System.out.println("Your age is "+age);
         System.out.println("Your gpa is "+gpa +" / 4.0");
-
     }
 
 }
