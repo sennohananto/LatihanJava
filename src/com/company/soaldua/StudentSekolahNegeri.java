@@ -1,13 +1,16 @@
 package com.company.soaldua;
 
 //Class Header
-public class Student {
+public class StudentSekolahNegeri {
+
+    public static final double JUMLAH_MATA = 2;
+
     private final String name;
     private final int age;
     private double gpa;
 
     //Constructor = Method yang namanya SAMA PERSIS seperti nama class nya
-    public Student(String name, int age, double gpa) {
+    public StudentSekolahNegeri(String name, int age, double gpa) {
         this.name = name;
         this.age = age;
         this.gpa = gpa;

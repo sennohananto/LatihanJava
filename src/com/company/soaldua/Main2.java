@@ -1,9 +1,18 @@
 package com.company.soaldua;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main2 {
+    /*
+    * Naming Convention
+    *+ camelCase -> huruf awalnya kecil. Huruf pertama di kata selanjutnya kapital -> variable & method
+    *+ PascalCase -> camelCase dengan huruf pertamanya kapital -> Class
+    *  kebab-case -> Huruf kecil semua, setiap kata dipisahkan pakai - ->PHP / CS
+    *  snake_case -> Huruf kecil semua, setiap kata dipisahkan pakai _ -> Penamaan Resource image_profile.jpg
+    *+ UPPER_SNAKE_CASE -> snake_case dengan semua huruf kapital -> penamaan variable konstanta
+    *
+    * */
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String name;
@@ -16,7 +25,7 @@ public class Main2 {
         do{
             System.out.print("Input your name [3 - 15 characters] (cannot be change) : ");
             name = sc.nextLine();
-        }while (!Student.isNameValid(name));
+        }while (!StudentSekolahNegeri.isNameValid(name));
 
         do {
             System.out.print("Input your age [min 16](Cannot be change) : ");
@@ -28,8 +37,8 @@ public class Main2 {
             gpa = sc.nextDouble();
         } while (gpa < 0.0 || gpa > 4.0);
 
-        Student student;
-        student = new Student(name, age, gpa);
+        StudentSekolahNegeri student;
+        student = new StudentSekolahNegeri(name, age, gpa);
 
         do{
             System.out.println("Welcome, "+ student.getName());
