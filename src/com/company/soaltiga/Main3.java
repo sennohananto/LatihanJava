@@ -7,29 +7,6 @@ public class Main3 {
     private static Scanner sc = new Scanner(System.in);
     private static ArrayList<FootWear> arrayList = new ArrayList<>();
 
-    private static boolean showData() {
-        if (arrayList.isEmpty()) {
-            System.out.println("There are no footwear to display!");
-            return false;
-        } else {
-            System.out.println("=================================================");
-            System.out.println("| No | Name \t\t\t | Price\t | Height  | Total Wheels |");
-            System.out.println("=================================================");
-
-            for (int i = 1; i <= arrayList.size(); i++) {
-                if (arrayList.get(i - 1).type.equals("Heels")) {
-                    Heels heels = (Heels) arrayList.get(i - 1);
-                    System.out.println("|  " + i + " | " + heels.name + " \t | " + heels.price + " | " + heels.getHeight() + " | - \t |");
-                } else {
-                    RollerSkate rollerSkate = (RollerSkate) arrayList.get(i - 1);
-                    System.out.println("|  " + i + " | " + rollerSkate.name + " \t | " + rollerSkate.price + " |  - \t" + "| " + rollerSkate.getTotalWheel() + " wheels |");
-                }
-            }
-            System.out.println("=================================================");
-            return true;
-        }
-    }
-
     public static void main(String[] args) {
         int choice = 0;
 
@@ -148,7 +125,28 @@ public class Main3 {
                     break;
             }
         } while (choice != 5);
+    }
 
+    private static boolean showData() {
+        if (arrayList.isEmpty()) {
+            System.out.println("There are no footwear to display!");
+            return false;
+        } else {
+            System.out.println("=================================================");
+            System.out.println("| No | Name \t\t\t | Price\t | Height  | Total Wheels |");
+            System.out.println("=================================================");
 
+            for (int i = 1; i <= arrayList.size(); i++) {
+                if (arrayList.get(i - 1).type.equals("Heels")) {
+                    Heels heels = (Heels) arrayList.get(i - 1);
+                    System.out.println("|  " + i + " | " + heels.name + " \t | " + heels.price + " | " + heels.getHeight() + " | - \t |");
+                } else {
+                    RollerSkate rollerSkate = (RollerSkate) arrayList.get(i - 1);
+                    System.out.println("|  " + i + " | " + rollerSkate.name + " \t | " + rollerSkate.price + " |  - \t" + "| " + rollerSkate.getTotalWheel() + " wheels |");
+                }
+            }
+            System.out.println("=================================================");
+            return true;
+        }
     }
 }
